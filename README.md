@@ -1,5 +1,5 @@
 # Bike Sharing Demand Prediction
-**Course:** DATA 5321 – Statistical Machine Learning I  
+**Course:** DATA 5321 - Statistical Machine Learning I  
 **Institution:** Seattle University, MS in Data Science  
 **Term:** Winter 2026
 
@@ -7,16 +7,16 @@
 
 ## Overview
 
-This project builds and compares predictive models for daily bike sharing demand using data from the Capital Bikeshare system in Washington, D.C. (2011–2012, 731 days total). The dataset is sourced from the UCI Machine Learning Repository and includes weather conditions, calendar features, and total daily rental counts.
+This project builds and compares predictive models for daily bike sharing demand using data from the Capital Bikeshare system in Washington, D.C. (2011-2012, 731 days total). The dataset is sourced from the UCI Machine Learning Repository and includes weather conditions, calendar features, and total daily rental counts.
 
-The goal is to predict daily rentals accurately enough to support real operational decisions — staffing, bike rebalancing, and capacity planning. The project is structured across four phases, progressively adding modeling complexity.
+The goal is to predict daily rentals accurately enough to support real operational decisions - staffing, bike rebalancing, and capacity planning. The project is structured across four phases, progressively adding modeling complexity.
 
 ---
 
 ## Dataset
 
-- **Source:** UCI Machine Learning Repository — Bike Sharing Dataset
-- **Response variable:** `cnt` — total daily bike rentals
+- **Source:** UCI Machine Learning Repository - Bike Sharing Dataset
+- **Response variable:** `cnt` - total daily bike rentals
 - **Train/test split:** 2011 data for training (n = 365), 2012 data for testing (n = 366)
 - **Predictors:** Season, month, holiday, weekday, working day, weather situation, temperature, apparent temperature, humidity, wind speed
 
@@ -24,14 +24,14 @@ The goal is to predict daily rentals accurately enough to support real operation
 
 ## Project Phases
 
-### Phase 1 — Exploratory Analysis & Linear Regression
+### Phase 1 - Exploratory Analysis & Linear Regression
 - Full EDA on 2011 training data: distributions, seasonal patterns, weather effects
 - Single-predictor regression models for all variables
 - Three interaction models tested: `temp × hum`, `season × weathersit`, `workingday × weekday`
 - Backward selection final model retaining: season, month, working day, weather situation, temperature, humidity, and wind speed
-- **Training R² ≈ 0.84** — but poor generalization (test R² = −0.70), motivating regularization
+- **Training R² ≈ 0.84** - but poor generalization (test R² = −0.70), motivating regularization
 
-### Phase 2 — Regularized Regression & Dimension Reduction
+### Phase 2 - Regularized Regression & Dimension Reduction
 Five models compared, all tuned with 10-fold cross-validation on 2011 training data:
 
 | Model | Key Detail |
@@ -42,7 +42,7 @@ Five models compared, all tuned with 10-fold cross-validation on 2011 training d
 | PLS | 19 components; more efficient than PCR due to response-oriented construction |
 | GAM | Nonlinear smooth terms for continuous predictors; captured curved temperature effect |
 
-### Phase 4 — Final Report & Model Comparison
+### Phase 4 - Final Report & Model Comparison
 - Full comparison of all five models on 2012 test data
 - Evaluation metrics: R², RMSE, MAE
 - Best-performing model identified and interpreted
@@ -53,9 +53,9 @@ Five models compared, all tuned with 10-fold cross-validation on 2011 training d
 ## Key Findings
 
 - **Temperature** is the single strongest predictor of daily demand (R² = 0.595 alone)
-- **Apparent temperature (`atemp`)** is nearly perfectly collinear with `temp` — Lasso correctly zeroed it out
+- **Apparent temperature (`atemp`)** is nearly perfectly collinear with `temp` - Lasso correctly zeroed it out
 - The **season × weather interaction** was statistically significant (p = 0.002): adverse weather reduces demand more sharply in summer than winter
-- The Phase 1 backward-selected model overfit badly — test R² of −0.70 was worse than predicting the training mean
+- The Phase 1 backward-selected model overfit badly - test R² of -0.70 was worse than predicting the training mean
 - Regularized models significantly improved generalization
 - **Shorter models (PLS, Lasso)** achieved comparable performance to PCR with fewer components
 
@@ -87,4 +87,4 @@ Five models compared, all tuned with 10-fold cross-validation on 2011 training d
 
 ## About
 
-Part of the MS in Data Science program at Seattle University. This project covers the full statistical learning pipeline: exploratory analysis, model selection, regularization, dimension reduction, and nonlinear modeling — applied to a real-world operational prediction problem.
+Part of the MS in Data Science program at Seattle University. This project covers the full statistical learning pipeline: exploratory analysis, model selection, regularization, dimension reduction, and nonlinear modeling - applied to a real-world operational prediction problem.
