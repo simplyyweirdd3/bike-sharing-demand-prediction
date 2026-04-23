@@ -1,0 +1,11 @@
+Predictor,R2,Effect_direction,Significance
+season,0.294,positive,significant
+mnth,0.198,positive,significant
+holiday,0.002,negative,not significant
+weekday,0,negligible,not significant
+workingday,0,positive,not significant
+weathersit,0.101,negative,significant
+temp,0.595,positive,significant
+atemp,0.601,positive,significant
+hum,0,negative,not significant
+windspeed,0.077,negative,significant
